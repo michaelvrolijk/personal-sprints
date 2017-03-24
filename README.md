@@ -6,7 +6,7 @@ This is a private repository for my personal sprints, each sprint and topic will
 
 - [Grunt, sprint one](#grunt)
 
-# Grunt, sprint one
+#$ Grunt, sprint one
 
 **Description:**
 
@@ -23,17 +23,17 @@ After the initial setup and including all the tasks and modules I'm refactoring 
 > - root/
 >   - app/
 >       - views/
->       - index.html
 >       - resources/
 >           - assets/
 >               - images/
 >               - javascript/
 >               - sass/
->    - build/
->    - .gitignore
->    - Gruntfile.js
->    - package.json
->    - README.md
+>       - index.html
+> - build/
+> - .gitignore
+> - Gruntfile.js
+> - package.json
+> - README.md
 	
 
 
