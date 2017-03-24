@@ -6,7 +6,7 @@ This is a private repository for my personal sprints, each sprint and topic will
 
 - [Grunt, sprint one](#grunt)
 
-#$ Grunt, sprint one
+## Grunt, sprint one
 
 **Description:**
 
