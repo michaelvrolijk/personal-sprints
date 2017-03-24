@@ -1,0 +1,23 @@
+{
+  "name": "personal-sprints",
+  "version": "1.0.0",
+  "description": "0.0.1",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelvrolijk/personal-sprints.git"
+  },
+  "author": "Michael Vrolijk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelvrolijk/personal-sprints/issues"
+  },
+  "homepage": "https://github.com/michaelvrolijk/personal-sprints#readme"
+}
