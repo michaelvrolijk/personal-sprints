@@ -34,6 +34,18 @@ After the initial setup and including all the tasks and modules I'm refactoring 
 > - Gruntfile.js
 > - package.json
 > - README.md
+
+**Plugins:**    
+
+```
+grunt.loadNpmTasks('grunt-contrib-watch');  
+grunt.loadNpmTasks('grunt-contrib-connect');     
+grunt.loadNpmTasks('grunt-contrib-jshint');     
+grunt.loadNpmTasks('grunt-htmlhint');   
+grunt.loadNpmTasks('grunt-contrib-sass');   
+grunt.loadNpmTasks('grunt-tinypng');    
+grunt.loadNpmTasks('grunt-contrib-clean');
+```  
 	
 
 
