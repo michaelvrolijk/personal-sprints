@@ -4,8 +4,8 @@ module.exports = {
     },
 
     js: {
-        files: ['app/resources/assets/javascript/*.js'],
-        tasks: ['jshint', 'uglify']
+        files: ['app/resources/assets/javascript/*.js', '!app/resources/assets/javascript/base.js'],
+        tasks: ['clean:js', 'jshint', 'concat', 'uglify']
     },
 
     html: {
@@ -15,6 +15,6 @@ module.exports = {
 
     css: {
         files: ['app/resources/assets/sass/*.scss', 'src/sass/**/*.scss'],
-        tasks: ['sass', 'cssmin']
+        tasks: ['clean:css', 'sass', 'cssmin']
     }
 };
