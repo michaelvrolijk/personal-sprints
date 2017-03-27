@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 options: {
                     hostname: 'localhost',
                     port: 6001,
-                    base: 'app',
+                    base: 'build',
                     livereload: true
                 }
             }
@@ -25,17 +25,17 @@ module.exports = function(grunt) {
 
             js: {
                 files: ['app/resources/assets/javascript/*.js'],
-                tasks: ['jshint']
+                tasks: ['jshint', 'uglify']
             },
 
             html: {
                 files: ['app/*.html', 'app/views/*.html'],
-                tasks: ['htmlhint']
+                tasks: ['htmlhint', 'copy:main']
             },
 
             css: {
                 files: ['app/resources/assets/sass/*.scss', 'src/sass/**/*.scss'],
-                tasks: ['sass']
+                tasks: ['sass', 'cssmin']
             }
         },
 
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'build/css/style.css' : 'app/resources/assets/sass/*.scss'
+                    'app/resources/assets/css/style.css' : 'app/resources/assets/sass/*.scss'
                 }
             }
         },
@@ -85,6 +85,47 @@ module.exports = function(grunt) {
             build: {
                 src: [ 'build' ]
             }
+        },
+
+        copy: {
+            main: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/',
+                    src: ['index.html'],
+                    dest: 'build/',
+                    filter: 'isFile'
+                }]
+            },
+            views: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/',
+                    src: ['views/*.html'],
+                    dest: 'build/',
+                    filter: 'isFile'
+                }]
+            }
+        },
+
+        cssmin: {
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/resources/assets/css',
+                    src: '*.css',
+                    dest: 'build/css',
+                    ext: '.min.css'
+                }]
+            }
+        },
+
+        uglify: {
+            build: {
+                files: {
+                    'build/javascript/base.min.js': ['app/resources/assets/javascript/**/*.js']
+                }
+            }
         }
 
     });
@@ -92,14 +133,20 @@ module.exports = function(grunt) {
     // Load the plugins
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-htmlhint');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-tinypng');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-tinypng');
+
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    grunt.loadNpmTasks('grunt-htmlhint');
+
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 
     // Register the tasks and their plugins
-    grunt.registerTask('default', ['clean', 'sass', 'htmlhint', 'jshint', 'connect', 'watch']);
-    grunt.registerTask('build', ['sass', 'htmlhint', 'jshint', 'tinypng'])
+    grunt.registerTask('default', ['clean', 'copy', 'sass', 'cssmin', 'htmlhint', 'jshint', 'uglify', 'connect', 'watch']);
+    grunt.registerTask('build', ['clean', 'copy', 'sass', 'cssmin', 'htmlhint', 'jshint', 'uglify',  'jshint'])
 };
