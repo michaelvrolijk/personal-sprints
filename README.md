@@ -49,6 +49,7 @@ After the initial setup and including all the tasks and modules I'm refactoring 
 "grunt-contrib-watch": "^1.0.0",
 "grunt-htmlhint": "^0.9.13",
 "grunt-tinypng": "^0.7.0"
+"load-grunt-config": "^0.19.2"
 ```  
 	
 ## Things I don't fully understand about WordPress
