@@ -2,4 +2,4 @@
 
 var gulp = require('gulp');
 
-gulp.task('default', ['sass', 'compress', 'cssmin', 'connect', 'watch']);
+gulp.task('default', ['clean', 'sass', 'compress', 'cssmin', 'minify-css', 'connect', 'watch']);

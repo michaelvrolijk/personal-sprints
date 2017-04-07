@@ -4,3 +4,4 @@
 /build/
 /app/resources/assets/javascript/base.js
 /app/resources/assets/css/
+!/build/index.html

@@ -1,0 +1,17 @@
+.heading {
+	font: normal normal normal 20px/1 Arial, Helvetica, sans-serif;
+	color: $black;
+
+	&--large {
+		font-size: 24px;
+	}
+
+	&--medium {
+		font-size: 22px;
+	}
+
+	&--small {
+		font-size: 18px;
+	}
+
+}

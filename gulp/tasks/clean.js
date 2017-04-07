@@ -3,8 +3,8 @@
 var gulp = require('gulp');
 var clean = require('gulp-clean');
 
-gulp.task('default', function () {
-	return gulp.src('app/resources/assets/javascript/index.js')
+gulp.task('clean', function () {
+	return gulp.src('app/index.html')
 		.pipe(clean({force: true}))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('build'));
 });

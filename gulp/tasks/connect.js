@@ -6,7 +6,7 @@ var connect = require('gulp-connect');
 gulp.task('connect', function() {
 	connect.server({
 		name: 'Personal Sprint',
-		root: 'app',
+		root: 'build',
 		port: 8080,
 		livereload: true
 	});
