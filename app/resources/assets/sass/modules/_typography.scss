@@ -1,17 +1,16 @@
 .heading {
-	font: normal normal normal 20px/1 Arial, Helvetica, sans-serif;
-	color: $black;
+	@include font(normal, 20px, $black, normal, 1);
 
 	&--large {
-		font-size: 24px;
+		@include font(normal, 24px, $black, normal, 1);
 	}
 
 	&--medium {
-		font-size: 22px;
+		@include font(normal, 22px, $black, normal, 1);
 	}
 
 	&--small {
-		font-size: 18px;
+		@include font(normal, 18px, $red, normal, 1);
 	}
 
 }

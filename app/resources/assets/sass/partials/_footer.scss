@@ -3,11 +3,24 @@
 	background-color: $silver;
 	display: flex;
 	align-items: center;
-	justify-items: center;
+	padding: 0 10%;
+
+	&__icons {
+		display: flex;
+
+		@each $icon in $icons {
+			.icon-#{$icon} {
+				background-image: url('../images/#{$icon}.png');
+				display: block;
+				width: 32px;
+				height: 32px;
+				margin: 10px;
+			}
+		}
+	}
 
 	span {
+		@extend .heading--small;
 		width: 100%;
-		text-align: center;
-		@extend .heading;
 	}
 }
